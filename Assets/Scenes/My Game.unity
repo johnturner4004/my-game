@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 7906413}
   - component: {fileID: 7906412}
   m_Layer: 0
-  m_Name: Capsule (2)
+  m_Name: Enemy (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 1460969215}
   - component: {fileID: 1460969214}
   m_Layer: 0
-  m_Name: Capsule (1)
+  m_Name: Enemy (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 1609642499}
   - component: {fileID: 1609642498}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 1715387452}
   - component: {fileID: 1715387451}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 2039754116}
   - component: {fileID: 2039754115}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Energy Drink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

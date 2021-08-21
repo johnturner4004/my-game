@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
   public float jumpForce;
+  public float moveSpeed;
   private Rigidbody playerRigidbody;
   public bool isOnGround = true;
+  private float horizontalInput;
   // Start is called before the first frame update
   void Start()
   {
@@ -21,6 +23,9 @@ public class PlayerController : MonoBehaviour
       playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
       isOnGround = false;
     }
+
+    horizontalInput = Input.GetAxis("Horizontal");
+    transform.Translate(Vector3.right * Time.deltaTime * moveSpeed * horizontalInput);
   }
 
   private void OnCollisionEnter(Collision collision)

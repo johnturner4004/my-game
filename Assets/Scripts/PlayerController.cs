@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+  public float xBound = 23.5f;
   public float jumpForce;
   public float moveSpeed;
   private Rigidbody playerRigidbody;
@@ -26,6 +27,16 @@ public class PlayerController : MonoBehaviour
 
     horizontalInput = Input.GetAxis("Horizontal");
     transform.Translate(Vector3.right * Time.deltaTime * moveSpeed * horizontalInput);
+
+    if (transform.position.x <= -xBound)
+    {
+      transform.position = new Vector3(-xBound, transform.position.y, transform.position.z);
+    }
+
+    if (transform.position.x >= xBound)
+    {
+      transform.position = new Vector3(xBound, transform.position.y, transform.position.z);
+    }
   }
 
   private void OnCollisionEnter(Collision collision)

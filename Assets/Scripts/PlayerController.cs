@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     PositionConstraints();
   }
 
+  // uses input from player to move player object
   private void PlayerMovement()
   {
     if (Input.GetKey(KeyCode.Space) && isOnGround)
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
     transform.Translate(Vector3.right * Time.deltaTime * moveSpeed * horizontalInput);
   }
 
+  // prevents player from falling outside the boundaries
   private void PositionConstraints()
   {
     if (transform.position.x <= -xBound)
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
     }
   }
 
+// Defines what happend when player collide with other objects
   private void OnCollisionEnter(Collision collision)
   {
     if (collision.gameObject.CompareTag("Ground"))

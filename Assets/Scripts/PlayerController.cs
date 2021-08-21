@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-  public float xBound = 23.5f;
-  public float jumpForce;
-  public float moveSpeed;
-  private Rigidbody playerRigidbody;
-  public bool isOnGround = true;
+  private float xBound = 23.5f;
+  private float jumpForce = 500.0f;
   private float horizontalInput;
+  private float moveSpeed = 10.0f;
+  private bool isOnGround = true;
+  private Rigidbody playerRigidbody;
   // Start is called before the first frame update
   void Start()
   {
@@ -19,6 +19,12 @@ public class PlayerController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    PlayerMovement();
+    PositionConstraints();
+  }
+
+  private void PlayerMovement()
+  {
     if (Input.GetKey(KeyCode.Space) && isOnGround)
     {
       playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -27,7 +33,10 @@ public class PlayerController : MonoBehaviour
 
     horizontalInput = Input.GetAxis("Horizontal");
     transform.Translate(Vector3.right * Time.deltaTime * moveSpeed * horizontalInput);
+  }
 
+  private void PositionConstraints()
+  {
     if (transform.position.x <= -xBound)
     {
       transform.position = new Vector3(-xBound, transform.position.y, transform.position.z);
